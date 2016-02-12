@@ -1,0 +1,15 @@
+
+<h1>Posts</h1>
+<div class="col-md-10 col-md-offset-1">
+ <% @posts.each do |post| %>
+ <div class="post">
+
+  <h2><%= post.title %></h2>
+  <p><%= post.content %></p>
+  <% if logged_in? %>
+    <p>By <%= post.user.name %></p>
+  <% end %>
+  </div>
+  
+  <% end %>
+</div>
