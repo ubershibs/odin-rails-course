@@ -7,6 +7,7 @@ As I'd already done all the installation/tutorial work that made up the early pa
 * SQL Zoo - Assignment: [The Odin Project - SQL](http://www.theodinproject.com/ruby-on-rails/sql). I started logging my solutions to the tutorial problems from the 4th round.
 * Micro-reddit - Assignment: [The Odin Project - Active Record Basics](http://www.theodinproject.com/ruby-on-rails/building-with-active-record)
 * Re-former - Assignment: [The Odin Project - Forms](http://www.theodinproject.com/ruby-on-rails/forms)
+* Members-only - Assignment: [The Odin Project - Authentication](http://www.theodinproject.com/ruby-on-rails/authentication)
 
 Missing from these is the Sample App I'm building as part of the Rails Tutorial, which I am (for the moment) saving separately on bitbucket, just for fun. However, you can check the latest version of the app at:
 
