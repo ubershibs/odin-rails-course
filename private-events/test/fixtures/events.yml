@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  description: 
+  location: 
+  date: 
+  start_time: 2016-02-14 16:54:28
+
+two:
+  name: 
+  description: 
+  location: 
+  date: 
+  start_time: 2016-02-14 16:54:28

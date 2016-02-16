@@ -1,0 +1,41 @@
+<div class="page-header">
+  <h1><%= @user.name %></h1>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3>Hosting <%= render 'shared/new_event_btn' %></h3>
+      </div>
+      <div class="list-group">
+        <% @events.each do |event| %>
+          <%= link_to event.name, event, class: "list-group-item" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3>Upcoming events</h3>
+      </div>
+      <div class="list-group">
+        <% @upcoming_events.each do |event| %>
+          <%= link_to event.name, event, class: "list-group-item" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        <h3>Past events</h3>
+      </div>
+      <div class="list-group">
+        <% @past_events.each do |event| %>
+          <%= link_to event.name, event, class: "list-group-item" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

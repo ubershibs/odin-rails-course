@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class PostTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+ 
+ def setup
+  @post = Post.new(title: "Hello", Content: "Goodbye", user_id: 1)
 end
