@@ -1,6 +1,6 @@
 class RsvpsController < ApplicationController
   def create
-    @event = Event.find(params[:rsvp][:attended_event_id])
+    @event = Event.find(params[:attended_event_id])
     current_user.attend!(@event)
     flash[:success] = "#{current_user.name} has RSVPed for this event"
     redirect_to @event

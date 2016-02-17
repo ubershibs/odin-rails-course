@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   end
 
   def attend!(event)
-    self.rsvps.create!(attended_event_id: event.id)
+    rsvps.create(attended_event_id: event.id)
   end
 
   def cancel!(event)

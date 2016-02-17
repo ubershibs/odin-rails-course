@@ -7,32 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/flash' %>
   <div class="container">
-    <div class= "col-md-12">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "PrivateEvents", root_path %></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "All events", events_path %></li>
-        <% if logged_in? %>
-          <li><%= link_to "#{current_user.name}", current_user %></li>
-          <li>
-            <%= link_to logout_path, method: "delete", class: "btn navbar-btn" do %>
-              <span class="glyphicon glyphicon-off" alt="Log out"></span>
-            <% end %>
-          </li>
-        <% else %>
-            <li><%= link_to "Log in", login_path %></li>
-          <% end %>
-      </ul>
-    </div>
-  </nav>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
-  </div>
     <%= yield %>
-</div>
+  </div>
 </body>
 </html>
