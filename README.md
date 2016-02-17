@@ -9,8 +9,6 @@ As I'd already done all the installation/tutorial work that made up the early pa
 * Re-former - Assignment: [The Odin Project - Forms](http://www.theodinproject.com/ruby-on-rails/forms)
 * Members-only - Assignment: [The Odin Project - Authentication](http://www.theodinproject.com/ruby-on-rails/authentication)
 
-Missing from these is the Sample App I'm building as part of the Rails Tutorial, which I am (for the moment) saving separately on bitbucket, just for fun. However, you can check the latest version of the app at:
+I've added the SampleApp from Michael Hartl's railstutorial.org as of this commit. I've completed the full tutorial/app, and am now backtracking and working through some of the additional exercises he provided. You can see the app at:
 
-https://hidden-fjord-76122.herokuapp.com
-
-So far, I've completed up to chapter 9 of the tutorial.
+[hidden-fjord-76122 on heroku](https://hidden-fjord-76122.herokuapp.com)
