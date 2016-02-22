@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="col-md-10 col-md-offset-1">
+    <div id="flight-info">
+      <h1>Flight details</h1>
+      <table>
+        <tr>
+          <th>Flight #</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Duration</th>
+        </tr>
+        <tr>
+          <td><%= @flight.id %></td>
+          <td><%= @flight.from_airport.code %></td>
+          <td><%= @flight.to_airport.code %></td>
+          <td><%= @flight.flight_date %></td>
+          <td><%= @flight.flight_time.in_time_zone("EST") %></td>
+          <td><%= distance_of_time_in_words(@flight.duration) %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="booking-form">
+      <h2>Enter passenger details</h2>
+      <% passenger_num = 1 %>
+      <%= form_for @booking do |flight| %>
+          <%= render 'shared/error_messages', object: flight.object %>
+          <%= flight.fields_for :passengers do |p| %>
+            <h3>Passenger <%= passenger_num %></h3>
+            <% passenger_num += 1 %>
+            <div class="form-group">
+              <%= p.label :name, "Name:", class: "control-label" %>
+              <%= p.text_field :name, class: "form-control"%>
+            </div>
+            <div class="form-group">
+              <%= p.label :email, "Email:", class: "control-label" %>
+              <%= p.email_field :email, class: "form-control"%>
+            </div>
+          <% end %>
+        <%= flight.hidden_field(:flight_id, value: params[:flight_id]) %>
+        <%= flight.submit "Book Flight" %>
+      <% end %>   
+    </div>
+  </div>
+</div>  

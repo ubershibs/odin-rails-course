@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="page-header">
+      <h1>Search for flights</h1>
+    </div>
+
+      <%= form_tag root_path, method: "get", class: "form-inline" do %>
+        <%= hidden_field_tag :search %>
+        <div class="form-group">
+          <%= label_tag :from %> <%= select_tag :from, options_for_select(@airports, params[:from]), class: "form-control" %>         
+        </div>
+        <div class="form-group">
+        <%= label_tag :to %> <%= select_tag :to, options_for_select(@airports, params[:to]), class: "form-control" %> 
+        </div>
+        <div class="form-group">
+        <%= label_tag :passengers, "Number of passengers" %> <%= select_tag :passengers, options_for_select(@passengers, params[:passengers]), class: "form-control" %> 
+        </div>
+        <div class="form-group">
+        <%= label_tag :date %> <%= select_tag :date, options_for_select(@dates, params[:date]), class: "form-control" %> 
+      </div>
+        <%= submit_tag "Search", class: "btn btn-default" %>
+      </p>
+      <% end %>
+    </div>
+    <% unless @flights.empty? %>
+      <div id="search-results">
+        <h3>Choose a flight</h3>
+        <%= form_tag(new_booking_path, method: "get") do %>
+          <table>
+            <tr>
+              <th></th>
+              <th>Flight #</th>
+              <th>From Airport</th>
+              <th>To Airpoit</th>
+              <th>Date</th>
+              <th>Departure Time</th>
+              <th>Duration</th>
+            </tr> 
+            <!-- Search results --> 
+            <% @flights.each do |flight| %>
+              <tr>
+                <td><%= radio_button_tag(:flight_id, flight.id) %></td>
+                <td><%= flight.id %></td>
+                <td><%= flight.from_airport.code %></td>
+                <td><%= flight.to_airport.code %></td>
+                <td><%= flight.flight_date %></td>
+                <td><%= flight.flight_time.in_time_zone("EST") %></td>
+                <td><%= distance_of_time_in_words(flight.duration) %></td>
+              </tr>
+            <% end %> 
+          </table>
+          <%= hidden_field_tag(:passengers, params[:passengers]) %>
+          <%= submit_tag "Continue" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

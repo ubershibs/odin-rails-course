@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="col-md-10 col-md-offset-1">
+    <div id="flight-info">
+      <h1>Flight details</h1>
+      <table>
+        <tr>
+          <th>Flight #</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Duration</th>
+        </tr>
+        <tr>
+          <td><%= @booking.flight.id %></td>
+          <td><%= @booking.flight.from_airport.code %></td>
+          <td><%= @booking.flight.to_airport.code %></td>
+          <td><%= @booking.flight.flight_date %></td>
+          <td><%= @booking.flight.flight_time.in_time_zone("EST") %></td>
+          <td><%= distance_of_time_in_words(@booking.flight.duration) %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="booking-details">
+      <h2>Passenger details</h2>
+      <% passenger_num = 1 %>
+      <% @booking.passengers.each do |passenger| %>
+        <h3>Passenger <%= passenger_num %></h3>
+        <% passenger_num += 1 %>
+        Name: <%= passenger.name %><br />
+        Email: <%= passenger.email %><br />
+      <% end %>   
+    </div>
+  </div>
+</div>  
