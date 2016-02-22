@@ -9,6 +9,7 @@ The following are projects I've completed as part of The Odin Project's Rails co
 * Re-former - Assignment: [The Odin Project - Forms](http://www.theodinproject.com/ruby-on-rails/forms)
 * Members-only - Assignment: [The Odin Project - Authentication](http://www.theodinproject.com/ruby-on-rails/authentication)
 * Private-events - Assignment: [The Odin Project - Associations](http://www.theodinproject.com/ruby-on-rails/associations?ref=lc-pb)
+* Odin-flight-booker - Assignment: [The Odin Project - Advanced Forms](http://www.theodinproject.com/ruby-on-rails/building-advanced-forms)
 
 ###Rails Tutorial Sample App
 I've also added the SampleApp from Michael Hartl's railstutorial.org to this repo. I've completed the full tutorial/app, and am now backtracking and working through some of the additional exercises he provided. You can see the app live at:
