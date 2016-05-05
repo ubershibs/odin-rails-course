@@ -19,9 +19,9 @@
         <%= label_tag :date %> <%= select_tag :date, options_for_select(@dates, params[:date]), class: "form-control" %> 
       </div>
         <%= submit_tag "Search", class: "btn btn-default" %>
-      </p>
       <% end %>
-    </div>
+    </div>  
+    <div class="col-md-10 col-md-offset-1">
     <% unless @flights.empty? %>
       <div id="search-results">
         <h3>Choose a flight</h3>
